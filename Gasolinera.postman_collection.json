@@ -1,0 +1,1197 @@
+{
+	"info": {
+		"_postman_id": "b781b4cb-ebe4-44eb-8e61-1c9735da3f5e",
+		"name": "Gasolinera",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41671518"
+	},
+	"item": [
+		{
+			"name": "Tanques",
+			"item": [
+				{
+					"name": "Gasolinera_traerTanques",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/tanques/traer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tanques",
+								"traer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_traerTanques/ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/tanques/traer/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tanques",
+								"traer",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_crearTanques",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\": \"T006\",\n    \"capacidadMaxima\": 100000,\n    \"nivelActual\": 99000,\n    \"producto\": {\n        \"idProducto\": 6\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/tanques/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tanques",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_modificarTanques Parámetros por URL",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/tanques/editar/6?idProducto=6&codigo=T006&capacidadMaxima=100000&nivelActual=60000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tanques",
+								"editar",
+								"6"
+							],
+							"query": [
+								{
+									"key": "idProducto",
+									"value": "6"
+								},
+								{
+									"key": "codigo",
+									"value": "T006"
+								},
+								{
+									"key": "capacidadMaxima",
+									"value": "100000"
+								},
+								{
+									"key": "nivelActual",
+									"value": "60000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_modificarTanques Parámetros por JSON",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTanque\": 6,\r\n    \"codigo\": \"T006\",\r\n    \"capacidadMaxima\": 100000,\r\n    \"nivelActual\": 20000,\r\n    \"producto\": {\r\n        \"idProducto\": 6,\r\n        \"nombre\": \"Redbull\",\r\n        \"descripcion\": \"Redbull te da alas\",\r\n        \"tipo\": \"Energéticas\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/tanques/editar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tanques",
+								"editar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_borrarTanques",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/tanques/borrar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tanques",
+								"borrar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Producto",
+			"item": [
+				{
+					"name": "Gasolinera_traerProductos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/traer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"traer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_traerProductos/ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/traer/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"traer",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_crearproducto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Redbull\",\n    \"descripcion\": \"Redbull te da alas\",\n    \"tipo\": \"Energéticas\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_editarProductos Parámetros por URL",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/editar/6?nombre=Red Bull&descripcion=Red Bull te da alas!&tipo=Energéticas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"editar",
+								"6"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Red Bull"
+								},
+								{
+									"key": "descripcion",
+									"value": "Red Bull te da alas!"
+								},
+								{
+									"key": "tipo",
+									"value": "Energéticas"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_editarProductos Parámetros por JSON",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idProducto\": 6,\r\n    \"nombre\": \"Red Bull\",\r\n    \"descripcion\": \"Red Bull te da alas!\",\r\n    \"tipo\": \"Energéticas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/editar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"editar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_borrarProductos",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/productos/borrar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"borrar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Surtidor",
+			"item": [
+				{
+					"name": "Gasolinera_traerSurtidor",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/surtidores/traer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"surtidores",
+								"traer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_traerSurtidor/ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/surtidores/traer/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"surtidores",
+								"traer",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_crearSurtidor",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\": \"R001\",\n    \"fechaInstalacion\": \"2024-02-26\",\n    \"activo\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/surtidores/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"surtidores",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_editarSurtidor Parámetros por URL",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/surtidores/editar/?codigo&fechaInstalacion&activo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"surtidores",
+								"editar",
+								""
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": null
+								},
+								{
+									"key": "fechaInstalacion",
+									"value": null
+								},
+								{
+									"key": "activo",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_editarSurtidor Parámetros por JSON",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idSurtidor\": 3,\r\n    \"codigo\": \"B001\",\r\n    \"fechaInstalacion\": \"2025-01-01\",\r\n    \"activo\": true,\r\n    \"surtidorProductos\": [],\r\n    \"suministros\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/surtidores/editar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"surtidores",
+								"editar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_borrarSurtidor",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/surtidores/borrar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"surtidores",
+								"borrar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Precio",
+			"item": [
+				{
+					"name": "Gasolinera_traerPrecio",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/precios/traer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"precios",
+								"traer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_traerPrecio/ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/precios/traer/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"precios",
+								"traer",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_crearPrecio",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"producto\": {\n        \"idProducto\": 6\n    },\n    \"fechaInicio\": \"1994-01-01\",\n    \"fechaFin\": \"2050-12-31\",\n    \"precioPorLitro\": 2.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/precios/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"precios",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_editarPrecio Parámetros por URL",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/precios/editar/5?precioPorLitro=0.90&fechaInicio=2025-01-01&fechaFin=2025-12-31&idProducto=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"precios",
+								"editar",
+								"5"
+							],
+							"query": [
+								{
+									"key": "precioPorLitro",
+									"value": "0.90"
+								},
+								{
+									"key": "fechaInicio",
+									"value": "2025-01-01"
+								},
+								{
+									"key": "fechaFin",
+									"value": "2025-12-31"
+								},
+								{
+									"key": "idProducto",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_editarPrecio Parámetros JSON",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idPrecio\": 5,\r\n    \"producto\": {\r\n        \"idProducto\": 5,\r\n        \"nombre\": \"Diesel B\",\r\n        \"descripcion\": \"Diesel para actividades agrarias\",\r\n        \"tipo\": \"Diesel\"\r\n    },\r\n    \"fechaInicio\": \"2023-02-01\",\r\n    \"fechaFin\": \"2025-06-30\",\r\n    \"precioPorLitro\": 0.80\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/precios/editar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"precios",
+								"editar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_borrarPrecio",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/precios/borrar/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"precios",
+								"borrar",
+								"20"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Surtidor-Producto",
+			"item": [
+				{
+					"name": "Gasolinera_traerSurtidorProducto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"surtidor\": {\n        \"idSurtidor\": 3\n    },\n    \"producto\": {\n        \"idProducto\": 5\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/surtidor-productos/traer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"surtidor-productos",
+								"traer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_traerSurtidorProducto/ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"surtidor\": {\n        \"idSurtidor\": 3\n    },\n    \"producto\": {\n        \"idProducto\": 5\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/surtidor-productos/traer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"surtidor-productos",
+								"traer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_crearSurtidorProducto",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"surtidor\": {\n        \"idSurtidor\": 3\n    },\n    \"producto\": {\n        \"idProducto\": 5\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/surtidor-productos/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"surtidor-productos",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_editarSurtidorProducto Parámetros por URL",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/surtidor-productos/editar/1?idSurtidor&idProducto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"surtidor-productos",
+								"editar",
+								"1"
+							],
+							"query": [
+								{
+									"key": "idSurtidor",
+									"value": null
+								},
+								{
+									"key": "idProducto",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_editarSurtidorProducto Parámetros por JSON",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"surtidor\": {\n        \"idSurtidor\": 3\n    },\n    \"producto\": {\n        \"idProducto\": 5\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/surtidor-productos/editar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"surtidor-productos",
+								"editar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_borrarSurtidorProducto",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"surtidor\": {\n        \"idSurtidor\": 3\n    },\n    \"producto\": {\n        \"idProducto\": 5\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/surtidor-productos/borrar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"surtidor-productos",
+								"borrar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Suministros",
+			"item": [
+				{
+					"name": "Gasolinera_traerSuministros",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/suministros/traer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"suministros",
+								"traer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_traerSuministros/ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/suministros/traer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"suministros",
+								"traer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_crearSuministros",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"surtidor\": {\n        \"idSurtidor\": 3\n    },\n    \"producto\": {\n        \"idProducto\": 5\n    },\n    \"fechaHora\": \"2023-03-15T11:45:00\",\n    \"volumenLitros\": 1000.0,\n    \"importeEuros\": 1080.00\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/suministros/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"suministros",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gasolinera_borrarSuministros",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"surtidor\": {\n        \"idSurtidor\": 1\n    },\n    \"producto\": {\n        \"idProducto\": 2\n    },\n    \"fechaHora\": \"2023-03-15T11:45:00\",\n    \"volumenLitros\": 60.0,\n    \"importeEuros\": 99.00\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/suministros/borrar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"suministros",
+								"borrar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});",
+					"",
+					"pm.test(\"Response contains success message\", function () {",
+					"    pm.expect(pm.response.text()).to.include(\"creado correctamente\");",
+					"});"
+				]
+			}
+		}
+	]
+}
