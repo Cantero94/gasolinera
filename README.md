@@ -8,7 +8,7 @@ Proyecto académico orientado al desarrollo de una API REST para controlar las o
 
 Podés acceder a la versión desplegada de la API en el siguiente enlace:
 
-🌐 [gasolinera](https://gasolinera/)
+🌐 [gasolinera.onrender.com](https://gasolinera-aabs.onrender.com)
 
 ---
 
